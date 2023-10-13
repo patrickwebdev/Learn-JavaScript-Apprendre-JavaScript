@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+	<meta name="Author" content="Patrick Saint-Louis" />>
+    <title>JS demonstration 1</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        //Single line comment
+
+        /*
+        Multiple 
+        lines 
+        comment
+        */
+
+        //Variables
+        /*
+        Variable names are case sensitive (lower case and upper case are not the same).
+        Variable names must start with a letter, an underscore, or a dollar sign
+        Variable must content letter, number, underscore, or dollar sign
+        59 reserved words, such as 'function', cannot be used as variable names. Find the other...
+        */
+
+        //Declaring (Creating) Variables
+        /*
+        Local variables used the "var" keyword 
+        and are accessible only within the current function where they were declared (function scope)
+        
+        Local variables used the "let" keyword 
+        and are accessible only within the current block where they were declared (block scope)
+
+        Global variables do not used neither the "var" nor the "let" keyword 
+        and are also accessible outside where they were declared 
+        */
+        
+        var variable1
+        let variable2
+
+        //Declaring and initializing Variables
+        var variable3 = 0
+        var variable4 = 'default value'
+
+        //Assigning Values to Undeclared Variables
+        variable5 = 'Mister'
+
+        //Use of Semi column
+        quantity = 10 //end of line semi column is not required when there is one statement
+        tax_rate = 0.09975 + 0.05 ; unitPrice = 50; service = 'training' //more than one statement semi column is mandatory
+
+        //String Concatenation using +
+        firstname = 'Patrick'
+        lastname = 'Saint-Louis'
+        fullname = firstname + ' ' + lastname
+
+        //Arithmetic Operations
+        var subtotal = unitPrice * quantity
+        tax = subtotal * tax_rate
+        total = subtotal + tax
+
+        //Display in the browser with console.log() 
+        //"console" is a class object and "log()" is a method 
+        console.log("To see this text : Inspect the Browser > Console > Logs ") 
+        console.log("Prénom: ", firstname)
+        console.log("Nom: " + lastname) 
+
+        //Display in the browser with document.write() 
+        //"document" is a class object and "write()" is a method 
+        document.write("Prénom: ", firstname, "<br/>") 
+        document.write("Nom: ", lastname, "<br/>") 
+
+        document.write("Full Name: " + fullname + "<br/>") 
+        
+        document.write("Price in $ : Subtotal - Tax - Total" + "<br/>") 
+        document.write(subtotal + "<br/>") 
+        document.write(tax + "<br/>")
+        document.write(total + "<br/>")  
+
+        //Escape Characters - Use of backslash (\) to insert into a text string
+        //Apostrophes, new lines, quotes, and other special characters 
+        salutation = "Hello \"Quebec\""
+        document.write(salutation + "<br/>") 
+
+        bonMatin = 'Bon matin \'Friday\''
+        document.write(bonMatin + "<br/>") 
+
+        document.write("Hello \
+                            Montreal Quebec! <br/>");
+
+        //Embed HTML tags
+        document.write("<h1>I'm Heading level 1</h1>");
+        document.write("<p>I'm a paragraph.</p>");
+
+        //Constants (you can assign a value to a constant once)
+        const GST_TAX_RATE = 0.05
+        const GST_TAX_NAME = 'GST'
+        document.write("<p>" + GST_TAX_NAME + " : " + GST_TAX_RATE + "</p>");
+
+
+        //Data Types - Check it with the built function "typeof"
+        /*
+        5 Data Types that can contain values : string, number, boolean, object, function
+        2 Data Type that cannot contain values : null, undefined
+        6 Data Type of objects : Object, Date, Array, String, Number, Boolean
+        */
+
+        langName = "JavaScript"   //string
+        langVersion = 2017        //number
+        langMark = 9.7            //number
+        
+        const EVENT_NAME = 'Festival des Arts'
+        document.write(EVENT_NAME, " is ", typeof EVENT_NAME, "<br/>")
+
+        document.write(langName, " is ", typeof langName, "<br/>")
+        document.write(langVersion, " is ", typeof langVersion, "<br/>")
+        document.write(langMark, " is ", typeof langVersion, "<br/>")
+
+        document.write(langMark, " is ", typeof langVersion, "<br/>")
+
+
+        //Data Type Conversion
+        initialValue = '100' // initial datatype string
+        convertedValue = parseInt(initialValue)  // convert string to int
+        document.write(convertedValue, " is ", typeof convertedValue, "<br/>") // display final datatype
+
+        initialNbr = 3.1415927 // initial datatype number but decimal number 
+        convertedNbr = parseInt(initialNbr)  // convert float to int
+        document.write(convertedNbr, " is ", typeof convertedNbr, "<br/>") // display final datatype
+
+        initialVar = 300 // initial datatype int
+        convertedVar = String(initialVar)  // convert int to string
+        document.write(convertedVar, " is ", typeof convertedVar, "<br/>") // display final datatype
+        
+        /*
+        Other functions to convert datatype (explicit casting)
+        Boolean(), parseFloat(), String(), Number(), split()
+        */
+
+        /*
+        Questions :
+        1- What is NaN?
+        2- What is undefined variable?
+
+        Activities :
+        1-Remove this <script>, including the JavaScript code, in the <body> and place it in the <head>. What happens?
+        2-Remove the the JavaScript code in this HTML document and place it in a separate file name main.js 
+        And use <script src="main.js"> in the <head> to load main.js What happens?  
+        */
+        
+    </script>
+</body>
+
+</html>
