@@ -119,8 +119,6 @@
         coldLevel=10
         rain="yes"
 
-       if (rain==='yes') exit();
-
         if (coldLevel<10)
             document.write("Temp lower than 10 => Cold" + "<br/>")
         else
@@ -153,13 +151,13 @@
         city='Montreal'
         switch (city) {
             case "Toronto":
-                document.write("City = "+ city + "and Province = Ontario")
+                document.write("City = "+ city + " and Province = Ontario")
                 break
             case "Montreal":
-                document.write("City = "+ city + "and Province = Quebec")
+                document.write("City = "+ city + " and Province = Quebec")
                 break
             case "Vancouver":
-                document.write("City = "+ city + "and Province = British Columbia")
+                document.write("City = "+ city + " and Province = British Columbia")
                 break
             default:
                 document.write("City = "+ city + "and Province = ?")
@@ -168,13 +166,15 @@
         //3.7-Manage Errors with try() and catch()
         variableX = "hello"
         try {
-            if(variableX == "hello") throw "STOP"
+            if (variableX == "hello") 
+                throw "STOP"  //Stop the script and go to catch()
+            document.write("There's no Error!" + "<br/>") 
         }
         catch(errorVariable) {
             document.write("Error Message: " + errorVariable + "<br/>")
         }
 
-        throw new Error() //To stop the script
+        throw new Error() //Stop the script also
 
         //---------------------------------------------------
         // QUESTION 4 - Create a switch that check whether a number is = > or < 0
