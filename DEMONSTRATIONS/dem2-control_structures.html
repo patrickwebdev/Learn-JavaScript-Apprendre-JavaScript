@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="Author" content="Patrick Saint-Louis" />
+    <title>JS demonstration 2</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        /*
+        1-NaN Not a Number
+        */       
+        //Undefined and NaN (Not a Number) Datatype 
+        //Impossible conversion can create a Nan 
+        var variable0  //Undefined
+        variable1 = parseInt("HowToConvertStringToInt")
+        variable2 = Number(variable0)
+        //Impossible calculation can create a NaN
+        variable3 = Math.abs(undefined)
+        variable4 = Math.sqrt(-1)
+        variable5 = 0 * Infinity
+        variable6 = 'ImString' * 5
+
+        /*
+        2-undefined dataype
+        */
+        variable3
+        //document.write(typeof variable3 + "<br/>")
+
+        /*
+        3-Conditional Control Structure
+        */
+
+        //3.1-If Statement (only 1 possibility)
+        temp=9
+        event="raining"
+
+        if (temp<10)
+            document.write("Temp lower than 10 => Cold" + "<br/>")
+
+        if (temp<10 && event=='raining')
+            document.write("Temp lower than 10 and it's raining => Stay Home" + "<br/>")
+
+        //---------------------------------------------------
+        // QUESTION 1 - What is the difference between the comparison operators 
+        // == and ===  
+        // != and !==
+        //---------------------------------------------------
+        
+        //3.2-If - Else Statements (only 2 possibilities)
+        temp=9
+        event="raining"
+
+        if (temp<10)
+            document.write("Temp lower than 10 => Cold" + "<br/>")
+        else
+            document.write("Temp greater than or equal to 10 => Good" + "<br/>")
+
+        if (temp<10 && event=='raining')
+            document.write("Temp lower than 10 and it's raining => Stay Home" + "<br/>")
+        else
+            document.write("Temp greater than or equal to 10 and it's not raining => Go Out" + "<br/>")
+
+        //3.3-If - Else If - Else Statements (more than 2 possibilities)
+        temp=9
+        event="raining"
+  
+        if (temp<10 && event=='raining')
+            document.write("Temp lower than 10 and it's raining => Stay Home" + "<br/>")
+        else if (temp<10)
+            document.write("Temp lower than 10 => Cold" + "<br/>")
+        else if (event=='raining')
+            document.write("It's raining => Water" + "<br/>")
+        else
+            document.write("Temp greater than or equal to 10 and it's not raining => Go Out" + "<br/>")
+
+        //---------------------------------------------------
+        // QUESTION 2 - When is it necessary to put curly braces { } after If, Else If, or Else Statements
+        //---------------------------------------------------
+
+        //3.4- Block Scope Local Variables using the "let" keyword 
+        // Accessible only within the current block where they were declared 
+        variab1=99
+
+        if (variab1 > 100)
+        {
+            let variab2=0
+            document.write("variab1 = "+variab1+" and variab2 = "+variab2+"<br/>")
+        }
+        else if (variab1===100){
+            let variab3=200
+            document.write("variab1 = "+variab1+" and variab3 = "+variab3+"<br/>")
+        }
+        else 
+        {
+            variab4=999
+            document.write("variab1 = "+variab1+" and variab4 = "+variab4+"<br/>")
+        }
+
+        document.write("variab1 = "+variab1+"<br/>")
+        document.write(typeof variab1+"<br/>")
+        /*
+        document.write("variab2 = "+variab2+"<br/>")
+        document.write(typeof variab2+"<br/>")
+
+        document.write("variab3 = "+variab3+"<br/>")
+        document.write(typeof variab3+"<br/>")
+        */
+        document.write("variab4 = "+variab4+"<br/>")
+        document.write(typeof variab4+"<br/>")
+    
+        //3.5-Question Mark Operator (?)
+        //Equivalent to If - Else Statement (only 2 possibilities)
+        coldLevel=10
+        rain="yes"
+
+       if (rain==='yes') exit();
+
+        if (coldLevel<10)
+            document.write("Temp lower than 10 => Cold" + "<br/>")
+        else
+            document.write("Temp greater than or equal to 10 => Good" + "<br/>")
+
+        //Equivalent ? statement
+        document.write((coldLevel<10)?"Temp lower than 10 => Cold" + "<br/>":"Temp greater than or equal to 10 => Good" + "<br/>")
+        
+        out=(coldLevel<10)
+        ?
+        "Temp lower than 10 => Cold" + "<br/>"
+        :
+        "Temp greater than or equal to 10 => Good" + "<br/>"
+
+        document.write(out)
+        
+        //---------------------------------------------------
+        // QUESTION 3 - Convert the iF - Else statement below to a Question Mark Statement an test all possible outputs
+        /* if (temp<10 && rain=='yes')
+               document.write("Temp lower than 10 and it's raining => Stay Home" + "<br/>")
+           else
+               document.write("Temp greater than or equal to 10 and it's not raining => Go Out" + "<br/>") */
+        //---------------------------------------------------     
+
+        //3.6-Switch
+        //Conditions cannot be combined
+        //Break is used to go out the switch when finding the corresponding case
+        //Break can then be removed after the last case
+      
+        city='Montreal'
+        switch (city) {
+            case "Toronto":
+                document.write("City = "+ city + "and Province = Ontario")
+                break
+            case "Montreal":
+                document.write("City = "+ city + "and Province = Quebec")
+                break
+            case "Vancouver":
+                document.write("City = "+ city + "and Province = British Columbia")
+                break
+            default:
+                document.write("City = "+ city + "and Province = ?")
+        }
+
+        //3.7-Manage Errors with try() and catch()
+        variableX = "hello"
+        try {
+            if(variableX == "hello") throw "STOP"
+        }
+        catch(errorVariable) {
+            document.write("Error Message: " + errorVariable + "<br/>")
+        }
+
+        throw new Error() //To stop the script
+
+        //---------------------------------------------------
+        // QUESTION 4 - Create a switch that check whether a number is = > or < 0
+        // Display a significant message for each situation
+        //---------------------------------------------------     
+
+        /*
+        4-Iterative Control Structure
+        */
+
+        //4.1-While Loop
+        counterA = 0;
+
+        while (counterA < 5) {
+            document.write("Counter: " + counterA + "<br>")
+            ++counterA
+        }
+
+        document.write("<br>")
+
+        //4.2-Do... While Loop
+        counterB = 0;
+
+        do {
+            document.write("Counter: " + counterB + "<br>")
+            //++counterB
+        } while (++counterB < 5)
+
+        document.write("<br>")
+
+        //4.3-For Loop
+        for (counterC = 0; counterC < 5; ++counterC)
+            document.write("Counter: " + counterC + "<br>")
+
+        document.write("<br>")
+
+        //4.4-Continue Statement
+        grades = [50, 60, 59, 40, 100]
+        success = 0
+        for (i = 0; i < 5; ++i) {
+            if (grades[i] < 60)
+                continue
+            ++success
+        }
+        document.write(success + "/5 students succeed this course<br/>")
+
+
+        //4.5-Break Statement
+        alphabet = ['a', 'b', 'c', 'd', 'e']
+        letter = 'c'
+
+        for (i = 0; i < 5; ++i) {
+            if (alphabet[i] == letter)
+                break
+        }
+        document.write("I found " + letter + "<br/>")
+        document.write("The last value of i is " + i + "<br/>")
+
+
+
+    </script>
+</body>
+
+</html>
