@@ -86,7 +86,7 @@
         document.write(my2ndArray[0][0]+"<br/>")
         document.write(my2ndArray[2][1]+"<br/>")
 
-        //Access all elements using a loop
+        //Access all elements using a nested loop
         countArrRows = 3
         countArrColumns = 2
         for (i = 0 ; i < countArrRows ; i++){
