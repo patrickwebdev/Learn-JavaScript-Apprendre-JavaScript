@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Patrick Saint-Louis" />
+    <title>JavaScript Conditional If-ElseIf-Else</title>
+</head>
+
+<body>
+
+    <script>
+        //Declare variables
+        day_rank = 1
+        msgNotNumber = "Error! "+day_rank+" is not a number"
+        msgNotDigit = "Error! "+day_rank+" is not a digit (between 0 and 9)"
+        msgNotWeekday = day_rank+" does not correspond to a weekday"
+        msgMonday =day_rank+ " is Monday" 
+        msgTuesday =day_rank+ " is Tuesday" 
+        msgWednesday =day_rank+ " is Wednesday" 
+        msgThursday =day_rank+ " is Thursday" 
+        msgFriday =day_rank+ " is Friday" 
+        msgSaturday =day_rank+ " is Saturday" 
+        msgSunday =day_rank+ " is Sunday" 
+
+        try{
+            //If day_rank is not a number stop the script
+            if(typeof day_rank !== 'number'){        
+                throw msgNotNumber
+            }
+            
+            //If day_rank is a number, check it's value
+            //If day_rank is not between 0 and 9
+            if(day_rank<0 || day_rank>10){        
+                document.write(msgNotDigit)
+            }
+            //If day_rank is between 1 and 7
+            else if (day_rank>=1 && day_rank<=7){
+                if(day_rank==1)
+                    document.write(msgMonday)
+                else if(day_rank==2)
+                    document.write(msgTuesday)
+                else if(day_rank==3)
+                    document.write(msgWednesday)
+                else if(day_rank==4)
+                    document.write(msgThursday)
+                else if(day_rank==5)
+                    document.write(msgFriday)
+                else if(day_rank==6)
+                    document.write(msgSaturday)
+                else
+                    document.write(msgSunday)
+            }
+            //If day_rank is not between 0 and 9 but not between 1 and 7
+            else{
+                document.write(msgNotWeekday)
+            }
+        }
+        //Save the error message when day_rank is not a number 
+        //Display it before stopping the script
+        catch(err)
+        {
+            document.write(err)
+        }
+
+    </script>
+
+</body>
+
+</html>
