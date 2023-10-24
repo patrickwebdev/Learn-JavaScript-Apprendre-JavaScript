@@ -32,10 +32,10 @@
             
             //If day_rank is a number, check it's value
             //If day_rank is not between 0 and 9
-            if(day_rank<0 || day_rank>10){        
+            if(day_rank<0 || day_rank>9){        
                 document.write(msgNotDigit)
             }
-            //If day_rank is between 1 and 7
+            //If day_rank is between 0 and 9 and between 1 and 7
             else if (day_rank>=1 && day_rank<=7){
                 if(day_rank==1)
                     document.write(msgMonday)
@@ -52,7 +52,7 @@
                 else
                     document.write(msgSunday)
             }
-            //If day_rank is not between 0 and 9 but not between 1 and 7
+            //If day_rank is between 0 and 9 but not between 1 and 7
             else{
                 document.write(msgNotWeekday)
             }
