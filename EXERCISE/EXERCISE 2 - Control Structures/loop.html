@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Patrick Saint-Louis" />
+    <title>JavaScript Loop</title>
+</head>
+
+<body>
+
+    <script>
+        //Declare variables
+        multiplier = 10
+        msgNotBetwen1_10 = multiplier + " is not a number between 1 and 10"
+
+        try {
+            if (multiplier <= 0 || multiplier > 10) {
+                throw (msgNotBetwen1_10)
+            }
+            document.write('While Loop <br/>')
+            //While loop
+            counter = 1
+            while (counter <= 10) {
+                literal = multiplier + " X " + counter + " = "
+                calculations = multiplier * counter
+                document.write(literal + calculations + "<br/>")
+                counter++
+            }
+
+            document.write('<br/>Do...While Loop <br/>')
+            //Do...While loop
+            counter = 1
+            do {
+                literal = multiplier + " X " + counter + " = "
+                calculations = multiplier * counter
+                document.write(literal + calculations + "<br/>")
+                counter++
+            } while (counter <= 10)
+
+            document.write('<br/>For Loop <br/>')
+            //Do...While loop
+            for (counter = 1; counter <= 10; counter++) {
+                literal = multiplier + " X " + counter + " = "
+                calculations = multiplier * counter
+                document.write(literal + calculations + "<br/>")
+            }
+        }
+        catch (errMsg) {
+            document.write(errMsg)
+        }
+
+    </script>
+
+</body>
+
+</html>
