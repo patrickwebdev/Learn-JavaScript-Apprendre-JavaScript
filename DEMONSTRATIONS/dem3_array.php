@@ -104,6 +104,49 @@
         }
 
 
+//Another example
+        //Grades for 3 exam (column) for 4 students (rows)
+        /*
+                     midterm    project    final
+        student 1    75         86         100
+        student 2    95         66         70
+        student 3    85         86         90
+        student 4    88         56         60
+        */
+        grades=[[75,86,100],[95,66,70],[85,86,90],[88,56,60]]
+
+        //Display an individual element
+        document.write(grades[0][2]+"<br/>")
+
+        /* 
+        Index of all elements
+        row column
+        [0][0]
+        [0][1]
+        [0][2]
+
+        [1][0]
+        [1][1]
+        [1][2]
+
+        [2][0]
+        [2][1]
+        [2][2]
+
+        [3][0]
+        [3][1]
+        [3][2]
+            */
+
+        //Display all the elements using a nested loop 
+        for (i=0; i<=3;i++){
+            for(j=0; j<=2; j++){
+                document.write(grades[i][j]+"  ")
+            }
+            document.write("<br/>")
+        }
+
+
         /* QUESTION 2-
         Is it possible to include arrays that do not contain the same number of elements 
         in a multidimentional array in JavaScript?
