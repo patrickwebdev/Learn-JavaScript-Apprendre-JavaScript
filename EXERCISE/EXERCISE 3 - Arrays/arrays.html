@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Patrick Saint-Louis" />
+    <title>Arrays</title>
+</head>
+
+<body>
+
+    <script>
+        //Declare variables
+        hardwareType=['laptop', 'desktop', 'tablet', 'smartphone', 
+                        'smart TV', 'connected objects']
+                        
+        averagePrice =[89, 3000, 900, 243, 438, 850]
+        
+        //Calculate the lenght of the arrays
+        lgh_hardware = hardwareType.length
+        lgh_price = averagePrice.length
+
+        if (lgh_hardware===lgh_price){
+            //Display the array elements
+            //Match the 1st element of one to the last of the other
+            for (i=0; i<lgh_hardware; i++){
+                hardwareElem = hardwareType[i]
+                priceElem = averagePrice[lgh_price-1-i]
+                document.write('The average price of a '+
+                        hardwareElem+" is "+priceElem+"$<br/>")
+            }
+        }
+        else 
+            document.write('Error!The 2 arrays must have the same length')     
+    </script>
+
+</body>
+
+</html>
