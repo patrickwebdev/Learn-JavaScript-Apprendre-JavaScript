@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Patrick Saint-Louis" />
+    <title>JS demonstration 5-DOM</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0 0 0 0;
+        }
+
+        #container {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto 0 auto;
+            padding: 1% 0 1% 0;
+            text-align: center;
+        }
+
+        h1{
+            color:brown;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body> 
+    <div id="container">
+        <h1 id="home">HOME PAGE</h1>
+        <h2 id="services">OUR SERVICES</h2>
+        <a id="contact" href="http://mysite.com">Contact Us</a><br>
+        <p id="slogan">WE are YOU</p>
+        <p id="hworld">Hello World</p>
+        <p id="qbc">Quebec</p>
+        <p id="mtr">Montreal</p>
+        <span id="count"></span>
+
+    </div>
+
+
+    <script type="text/javascript">
+
+        /*
+        DOM Document Object Model 
+        The browser creates the Document Object Model (DOM) of a web page 
+        when it is loaded. The DOM is an object oriented representation 
+        of the HTML document. The DOM acts as an interface between JavaScript 
+        and the HTML document itself. Consequently, the actions below are some 
+        of the possible action in the DOM using JavaScript.
+        */
+
+        //1-Identify the elements
+        //Count the number of paragraph in the HTML document
+        const paragraphs = document.getElementsByTagName("p").length 
+        document.getElementById("count").innerHTML="Number of Paragraphs: "+paragraphs
+        //Get the 1st p
+        document.querySelector("p")
+
+        //2-Change elements
+        function $(id){
+            return document.getElementById(id)
+        }
+        $("services").innerHTML="OUR SERVICES AND PRICES"
+
+        //3-Add elements
+        const tagH2 = document.createElement("h2")
+        const display = document.getElementById("container")
+        display.appendChild(tagH2)
+        
+        const textH2 = document.createTextNode("OUR BLOG")
+        tagH2.appendChild(textH2)
+
+        //4-Remove elements
+        document.getElementById("contact").remove()
+
+        //5-Change CSS styles 
+        document.querySelector("h1").style.color="blue"
+
+        //6-Control events and react
+        /*     
+        onblur: The focus is lost on an element (for ex. move the cursor from an input to somewhere else) 
+        onfocus: An element gets focus (for ex. put the cursor in an input)
+        onchange: Any part of a form has changed (for ex. click, check, or uncheck an input)
+        onclick: An object is clicked (or tapped for tactile screen)
+        onerror: A JavaScript error occurs   
+        onkeypress: Any keyboard key is being pressed, but not including Shift, Alt, Ctrl, and Esc
+        onkeyup A key is released (for ex. press and release a keyborad key)
+        onload An object has loaded (for ex. when a html page is loaded)
+        onselect Some text is selected
+        onsubmit A form is submitted (for ex. the input of type submit is clicked or tapped)
+        
+        What else? Find some other events accessible via the DOM and JavaScript...
+        */
+
+        //7-Create new events
+        
+    </script>
+</body>
+
+</html>
