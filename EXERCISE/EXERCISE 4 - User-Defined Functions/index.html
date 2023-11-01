@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+	<script>		
+		//--------EXERCISE 1 -----------
+		document.write ("--------EXERCISE 1 -----------<br/>")
+
+		function myProduct(n1) {
+			if (n1 > 0)
+				return 'positive'
+			else if(n1 < 0)
+				return 'negative'
+			else
+				return 'nul'
+		}
+		
+		possiblValues=[-9,0,9]
+		randIndex = Math.floor(Math.random() * 3)
+		inputData = possiblValues[randIndex]
+
+		document.write ("Number = "+inputData+"<br/>")
+		document.write (myProduct(inputData))
+
+		
+		//--------EXERCISE 2 -----------
+		document.write("<br/><br/>")
+		document.write ("--------EXERCISE 2 -----------<br/>")
+
+		function arrayCalc(arr){   
+            var size=arr.length
+            var sum=0;
+            for(i=0;i<size;++i)
+                sum+=arr[i];
+            var average=sum/size
+            return {'size':size, 
+					'sum': sum,
+					'average':average}
+        }
+
+        data=[1,2,3,4,5];
+		output=arrayCalc(data)
+
+		for (eachVal in output)
+           document.write(eachVal+" = "+output[eachVal]+"<br/>")
+
+
+		//--------EXERCISE 3 -----------
+		document.write("<br/><br/>")
+		document.write ("--------EXERCISE 3 -----------<br/>")
+		
+		function countWords(sentence){
+            arrWords=sentence.split(' ')
+			nbrOfWords=arrWords.length
+			document.write("Sentence = '"+sentence+"'<br/>")
+			document.write("Number of Word = "+nbrOfWords+"<br/>")
+        }
+
+		phrase='Bon matin Montréal Québec Canada'
+        countWords(phrase)
+
+
+		//--------EXERCISE 4 -----------
+		document.write("<br/><br/>")
+		document.write ("--------EXERCISE 4 -----------<br/>")
+		
+		function getFactorial(nbr){  
+            return (nbr === 1 || nbr === 0) ?  1 : nbr * getFactorial(nbr - 1)
+        }
+
+		possiblValues=[5,0,1]
+		randIndex = Math.floor(Math.random() * 3)
+		inputData = possiblValues[randIndex]
+
+		document.write("Factorial "+inputData+" is "+getFactorial(inputData)+"<br/>")
+
+
+		//--------EXERCISE 5 -----------
+		document.write("<br/><br/>")
+		document.write ("--------EXERCISE 5 -----------<br/>")
+		
+		//Anonymous function expression
+		taxRate = function (name, value) {
+        	return [name, value]
+        }
+
+		//Call the anonymous user-defined function expression 
+		const TVQTAX = taxRate('TVQ', 0.09975)
+	
+		//Display the values returned by the anonymous user-defined function expression
+		document.write(TVQTAX+"<br/>")
+
+		//Display the datatype of the anonymous user-defined function expression
+		document.write("taxRate = function (name, value)<br/>")
+		document.write("DataType of taxRate is: "+ typeof taxRate + "<br/>")
+
+		/*Display the datatype of the variable used to save the value 
+		returned by the anonymous user-defined function expression*/
+		document.write("const TVQTAX = taxRate('TVQ', 0.09975)<br/>")
+		document.write("DataType of TVQTAX is: "+ typeof TVQTAX + "<br/>")
+
+
+		//--------EXERCISE 6 -----------
+		document.write("<br/><br/>")
+		document.write ("--------EXERCISE 6 -----------<br/>")
+		
+		//Named function expression
+		taxRate2 = function combine (name, value) {
+        	return [name, value]
+        }
+
+		//Call the named user-defined function expression 
+		const TVQTAX2 = taxRate2('TVQ', 0.09975)
+	
+		//Display the values returned by the named user-defined function expression
+		document.write(TVQTAX2 + "<br/>")
+
+		//Display the datatype of the named user-defined function expression
+		document.write("taxRate2 = function combine (name, value)<br/>")
+		document.write("DataType of taxRate2 is: "+ typeof taxRate2 + "<br/>")
+
+		//Display the datatype of the name of the named user-defined function expression
+		document.write("taxRate2 = function combine (name, value)<br/>")
+		document.write("DataType of combine is: "+ typeof combine + "<br/>")
+
+		/*Display the datatype of the variable used to save the value 
+		returned by the named user-defined function expression*/
+		document.write("const TVQTAX2 = taxRate2('TVQ', 0.09975)<br/>")
+		document.write("DataType of TVQTAX2 is: "+ typeof TVQTAX2 + "<br/>")
+	</script>
+</body>
+
+</html>
