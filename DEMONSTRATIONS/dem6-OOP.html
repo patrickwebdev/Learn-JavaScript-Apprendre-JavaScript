@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Author" content="Patrick Saint-Louis" />
-    <title>JS demonstration 5-DOM</title>
+    <title>JS demonstration 6-User-Defined Functions and OOP</title>
     <style>
       
     </style>
@@ -15,6 +15,8 @@
 <body> 
     
     <script type="text/javascript">
+
+        
         //User-Defined Functions and Class
         
         //--------------------------------
@@ -62,7 +64,7 @@
         function SuperBall(x) {
             const pi = 3.14;
             this.radius = x;
-            this.area = pi * x ** 2;
+            this.area = pi * this.radius ** 2;
 
             this.show = function () {
                 document.write('area = ' + this.area);
@@ -74,10 +76,11 @@
 
         // A less awkward notation.
         class MySuperBall {
+            
             constructor(x) {
                 const pi = 3.14;
                 this.radius = x;
-                this.area = pi * x ** 2;
+                this.area = pi * this.radius ** 2;
             }
 
             show() {
@@ -89,12 +92,12 @@
         document.write("<br/>");
 
         //Creating a child class - Use another class as a parent class
-        class whatBall extends MySuperBall {
+        class WhatBall extends MySuperBall {
             showAgain() {
                 document.write('the area = ' + this.area);
             }
         }
-        object6 = new whatBall(3);
+        object6 = new WhatBall(3);
         object6.showAgain();
         document.write("<br/>");
 
@@ -105,9 +108,9 @@
             this.uName = uName
             this.pCode = pCode
             this.displayOutputs = function () {   //Method
-                document.write("fName: " + this.fName + " ")
-                document.write("uName: " + this.uName + " ")
-                document.write("pCode: " + this.pCode + " ")
+                document.write("First Name: " + this.fName + " - ")
+                document.write("User Name: " + this.uName + " - ")
+                document.write("Pass Word: " + this.pCode + " - ")
             }
         }
 
@@ -125,9 +128,9 @@
         }
 
         function showOutputs() {   //Method
-            document.write("fName: " + this.thefName + "<br>")
-            document.write("uName: " + this.theuName + "<br>")
-            document.write("pCode: " + this.thepCode + "<br>")
+            document.write("First Name: " + this.thefName + " - ")
+            document.write("User Name: " + this.theuName + " - ")
+            document.write("Pass Word: " + this.thepCode + " - ")
         }
         
     </script>
