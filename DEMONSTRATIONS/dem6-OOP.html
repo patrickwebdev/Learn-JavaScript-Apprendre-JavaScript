@@ -74,7 +74,7 @@
         object4.show();
         document.write("<br/>");
 
-        // A less awkward notation.
+        // A less awkward notation for creating a Class.
         class MySuperBall {
             
             constructor(x) {
@@ -101,7 +101,9 @@
         object6.showAgain();
         document.write("<br/>");
 
-        //An Additional Exercise  
+        //--------------------------------
+        //3-AN ADDITIONNAL EXAMPLE 
+        //--------------------------------  
         //Declare a class and a method inside it 
         function Users(fName, uName, pCode) {
             this.fName = fName  //Properties
@@ -132,6 +134,10 @@
             document.write("User Name: " + this.theuName + " - ")
             document.write("Pass Word: " + this.thepCode + " - ")
         }
+
+        object8= new Employees('Pat','Rick','abc123def456');
+        object8.showData() //not object8.showData, not object8.showOutputs()
+        document.write("<br/>");
         
     </script>
 </body>
