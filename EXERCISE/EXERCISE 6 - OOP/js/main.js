@@ -66,6 +66,6 @@ function Identity(fn, ln, by) {
     var output = "First Name: " + this.fname;
     output += ", Last Name: " + this.lname;
     output += ", Age: " + this.getAge();
-    document.getElementById("msg").innerHTML = output;
+    document.getElementById(id).innerHTML = output;
   };
 }
