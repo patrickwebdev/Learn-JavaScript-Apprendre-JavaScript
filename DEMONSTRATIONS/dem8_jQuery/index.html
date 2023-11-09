@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Patrick Saint-Louis" />
+    <title>JQuery demonstration</title>
+    <!--Load local JQuery file-->
+    <script src="js/vendor/jquery-3.5.1.js"></script>
+  </head>
+
+  <body>
+    <h1></h1>
+    <p id="first-paragraph"></p>
+    <p class="second-paragraph"></p>
+    <h2 id="head-two">Value Assigned in HTML Doc</h2>
+    <p class="copy-h2"></p>
+
+    <button id='send_button'>SEND</button>
+    <p class='output'></p>
+
+    <p>
+      <input type="text" id="i1" />
+    </p>
+
+    <p>
+      <input type="text" id="i2" />
+    </p>
+
+    <p>
+      <input type="text" id="i3" />
+    </p>
+    <p id="output-i3"></p>
+
+  </body>
+
+  <script>
+    /*
+    JQuery is the most widely used JavaScript library that provides 
+    a way to uses the capabilities of Javascript using a shorter a easier syntax
+    */
+
+    //1-Manipulate element using the DOM
+
+    //1.1.Change element values 
+    //a.Get the h1 and Change its HTML
+    $('h1').html('Heading 1 Assigned Using The DOM')
+
+    //b.Get the paragraph identified with a id set to first-paragraphh and Change its HTML
+    $('#first-paragraph').html('1st Value Assigned Using The DOM')
+
+    //c.Get the paragraph identified with a class set to second-paragraph and Change its HTML 
+    $('p.second-paragraph').html('2nd Value Assigned Using The DOM')
+
+    //d.Get the previous 2 paragraphs and Change their CSS 
+    $('#first-paragraph, p.second-paragraph').css('color','blue')
+
+    //1.2.Receive element values 
+    var data = $('#head-two').text()
+    $('p.copy-h2').html(data)
+
+    
+    //2-Handle DOM events
+
+    //a.click equivalent to onclick in JavaScript 
+    $('#send_button').click(function(){
+      let msg='Your Form was successfully submitted!'
+      $('p.output').html(msg)
+    })
+
+    //b.blur equivalent to onblur in JavaScript 
+    $('#i1').blur(function() {  
+      $('#i1').attr('placeholder','Write Something')
+    } )
+
+    //c.focus equivalent to onfocus in JavaScript 
+    $('#i2').focus(function() {  
+      $(this).css('border','8px solid red')
+    } )
+
+    //d.keypress equivalent to onkeyup in JavaScript 
+    //Anonymous Function
+    /* 
+    $('#i3').keyup(function() { 
+      let data = $('#i3').val()
+      let msg="You wrote: " + data
+      $('#output-i3').html(msg)
+    } )
+    */
+
+    //Named Function
+    function readInput() {
+      let data = $('#i3').val()
+      let msg="You wrote: " + data
+      $('#output-i3').html(msg)
+    }
+
+    //Call the function readInput
+    $('#i3').keyup(readInput)
+
+  </script>
+</html>
