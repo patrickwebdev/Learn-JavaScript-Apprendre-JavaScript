@@ -11,18 +11,24 @@ function validateInput() {
     message1.innerHTML = "Number 1 cannot be empty!";
     //Display error for input 2
     message2.innerHTML = "Number 2 cannot be empty!";
+    //Display nothing for input 3
+    message3.innerHTML = "";
   } else if (number1 == "") {
     //Display error for input 1
     message1.innerHTML = "Number 1 cannot be empty!";
     //Display the value entered in input 2
     let display2 = "Number 2 = " + number2;
     message2.innerHTML = display2;
+    //Display nothing for input 3
+    message3.innerHTML = "";
   } else if (number2 == "") {
     //Display error for input 2
     message2.innerHTML = "Number 2 cannot be empty!";
     //Display the value entered in input 1
     let display1 = "Number 1 = " + number1;
     message1.innerHTML = display1;
+    //Display nothing for input 3
+    message3.innerHTML = "";
   } else {
     //Display the value entered in input 2
     let display1 = "Number 1 = " + number1;
