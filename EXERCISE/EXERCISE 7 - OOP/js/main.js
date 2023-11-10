@@ -66,7 +66,7 @@ class CountNumbers {
   //Method
   showSize() {
     this.setSize();
-    var output = { dataset_data: this.dataset, dataset_size: this.datasetSize };
+    var output = { "dataset_data": this.dataset, "dataset_size": this.datasetSize };
     return output;
   }
 }
@@ -87,7 +87,7 @@ class CombineNumbers extends CountNumbers {
   //Method
   showSum() {
     this.setSum();
-    var output = { dataset_sum: this.datasetSum };
+    var output = { "dataset_sum": this.datasetSum };
     return output;
   }
 }
@@ -105,7 +105,7 @@ class CompareNumbers extends CombineNumbers {
   //Method
   showMean() {
     this.setMean();
-    var output = { dataset_mean: this.datasetMean };
+    var output = { "dataset_mean": this.datasetMean };
     return output;
   }
 }
