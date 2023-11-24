@@ -134,6 +134,58 @@
         document.write("<br/>")
 
 
+        //8-NESTED OD INNER FUNCTIONS 
+        //THIS MEANS FUNCTIONS PLACED INSIDE ANOTHER FUNCTION 
+
+        //Main function that includes named sub-functions
+        function analyze1Number(nbr){
+            //sub-function to calculate factorial
+            function setFactorial(a) {
+                if (a == 1 || a == 0)
+                    return 1
+                else
+                    return a * setFactorial(a - 1)
+            }
+            //sub-function to calculate multiple
+            function setMultiple(a){
+                if (a%2===0 && a%3===0)
+                    return "multiple of both 2 and 3"
+                else if (a%2===0)
+                    return "multiple of 2"
+                else if (a%3===0)
+                    return "multiple of 3"
+                else
+                    return "neither multiple of 2 nor 3"
+            }
+
+            document.write("<p>"+"Factorial "+nbr+" = "+setFactorial(nbr)+"</p>");
+            document.write("<p>"+nbr+" is "+setMultiple(nbr)+"</p>");
+        }
+
+        //Call the main function
+        analyze1Number(4)
+        analyze1Number(3)
+        analyze1Number(6)
+
+        //Sub-functions are not accessibe outside the main function
+        //Sub-functions are local functions
+        //Uncaught ReferenceError: setFactorial is not defined
+        setFactorial(9) 
+
+       //---------------------------------
+       //---------------------------------
+
+       //Main function that includes anonymous sub-functions
+        function place (country) {
+            return function (city) {
+                return (country+', '+city);
+            };
+        }
+
+        //Call the main function and the anonymous function
+        document.write("<p>"+place("Canada")("Montreal")+"</p>");
+
+
     </script>
 </body>
 
